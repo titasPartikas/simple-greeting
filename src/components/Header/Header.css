@@ -1,0 +1,21 @@
+.header {
+    background-color: gray;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+}
+
+.header-container a {
+    text-decoration: none;
+    color: white;
+}

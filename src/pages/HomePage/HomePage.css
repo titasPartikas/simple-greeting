@@ -1,0 +1,8 @@
+.img {
+    height: 250px;
+}
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+}

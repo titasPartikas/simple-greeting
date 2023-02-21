@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useMemo } from "react";
+import { Route, Routes } from "react-router-dom";
+import Container from "./components/Container/Container.js";
+import "./App.css";
+import Header from "./components/Header/Header.js";
+import Footer from "./components/Footer/Footer.js";
+import HomePage from "./pages/HomePage/HomePage.js";
+import ContactUsPage from "./pages/ContactUsPage/ContactUsPage.js";
+import CatalogePage from "./pages/CatalogePage/CatalogePage.js";
+import { routes } from "./constants/routes.js";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.js";
 
 function App() {
+  const headerLinks = useMemo(() => {
+    return [
+      {
+        to: routes.homePage,
+        label: "Home",
+      },
+      {
+        to: routes.catalogePage,
+        label: "Cataloge",
+      },
+      {
+        to: routes.contactUsPage,
+        label: "Contact Us!",
+      },
+    ];
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header pages={headerLinks} />
+      <Routes>
+        <Route path={routes.homePage} element={<HomePage />} />
+        <Route path={routes.catalogePage} element={<CatalogePage />} />
+        <Route path={routes.contactUsPage} element={<ContactUsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      <Footer />
+    </Container>
   );
 }
 

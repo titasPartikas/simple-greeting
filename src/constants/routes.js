@@ -1,5 +1,6 @@
 export const routes = {
-    homePage: "/",
-    catalogePage: "/cataloge",
-    contactUsPage: "/contact-us",
-}
+  homePage: "/",
+  catalogePage: "/cataloge",
+  catalogeItemPage: "/cataloge/:id",
+  contactUsPage: "/contact-us",
+};

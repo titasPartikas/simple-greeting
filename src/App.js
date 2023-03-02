@@ -9,6 +9,7 @@ import ContactUsPage from "./pages/ContactUsPage/ContactUsPage.js";
 import CatalogePage from "./pages/CatalogePage/CatalogePage.js";
 import { routes } from "./constants/routes.js";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.js";
+import CatalogeItemPage from "./pages/CatalogeItemPage/CatalogeItemPage.js";
 
 function App() {
   const headerLinks = useMemo(() => {
@@ -33,8 +34,9 @@ function App() {
       <Header pages={headerLinks} />
       <Routes>
         <Route path={routes.homePage} element={<HomePage />} />
-        <Route path={routes.catalogePage} element={<CatalogePage />} />
         <Route path={routes.contactUsPage} element={<ContactUsPage />} />
+        <Route path={routes.catalogePage} element={<CatalogePage />} />
+        <Route path={routes.catalogeItemPage} element={<CatalogeItemPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
